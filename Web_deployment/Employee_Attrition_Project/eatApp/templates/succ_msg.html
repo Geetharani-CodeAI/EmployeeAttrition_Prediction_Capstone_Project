@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Employee Attrition Prediction</h1>
+    <div class="fieldWrapper">
+      <h2>For the values you have entered</h2>
+      <p>Age (years): {{ data_Age }}</p>
+      <p>DailyRate: {{ data_DailyRate }}</p>
+      <p>DistanceFromHome (km): {{ data_DistanceFromHome }}</p>
+      <p>Education (1–5): {{ data_Education }}</p>
+      <p>EnvironmentSatisfaction (1–4): {{ data_EnvironmentSatisfaction }}</p>
+      <p>HourlyRate (30–100): {{ data_HourlyRate }}</p>
+      <p>JobInvolvement (1–4): {{ data_JobInvolvement }}</p>
+      <p>JobLevel (1–5): {{ data_JobLevel }}</p>
+      <p>JobSatisfaction (1–4): {{ data_JobSatisfaction }}</p>
+      <p>MonthlyIncome: {{ data_MonthlyIncome }}</p>
+      <p>MonthlyRate: {{ data_MonthlyRate }}</p>
+      <p>NumCompaniesWorked: {{ data_NumCompaniesWorked }}</p>
+      <p>PercentSalaryHike (%): {{ data_PercentSalaryHike }}</p>
+      <p>PerformanceRating (1–4): {{ data_PerformanceRating }}</p>
+      <p>RelationshipSatisfaction (1–4): {{ data_RelationshipSatisfaction }}</p>
+      <p>StockOptionLevel (0–3): {{ data_StockOptionLevel }}</p>
+      <p>TotalWorkingYears: {{ data_TotalWorkingYears }}</p>
+      <p>TrainingTimesLastYear: {{ data_TrainingTimesLastYear }}</p>
+      <p>WorkLifeBalance (1–4): {{ data_WorkLifeBalance }}</p>
+      <p>YearsAtCompany: {{ data_YearsAtCompany }}</p>
+      <p>YearsInCurrentRole: {{ data_YearsInCurrentRole }}</p>
+      <p>YearsSinceLastPromotion: {{ data_YearsSinceLastPromotion }}</p>
+      <p>YearsWithCurrManager: {{ data_YearsWithCurrManager }}</p>
+
+      <p>BusinessTravel_Travel_Frequently (1=Yes, 0=No): {{ data_BusinessTravel_Travel_Frequently }}</p>
+      <p>BusinessTravel_Travel_Rarely (1=Yes, 0=No): {{ data_BusinessTravel_Travel_Rarely }}</p>
+
+      <p>Department_Research_and_Development (1/0): {{ data_Department_Research_and_Development }}</p>
+      <p>Department_Sales (1/0): {{ data_Department_Sales }}</p>
+
+      <p>EducationField_Life_Sciences (1/0): {{ data_EducationField_Life_Sciences }}</p>
+      <p>EducationField_Marketing (1/0): {{ data_EducationField_Marketing }}</p>
+      <p>EducationField_Medical (1/0): {{ data_EducationField_Medical }}</p>
+      <p>EducationField_Other (1/0): {{ data_EducationField_Other }}</p>
+      <p>EducationField_Technical_Degree (1/0): {{ data_EducationField_Technical_Degree }}</p>
+
+      <p>Gender_Male (1=Male, 0=Female): {{ data_Gender_Male }}</p>
+
+      <p>JobRole_Human_Resources (1/0): {{ data_JobRole_Human_Resources }}</p>
+      <p>JobRole_Laboratory_Technician (1/0): {{ data_JobRole_Laboratory_Technician }}</p>
+      <p>JobRole_Manager (1/0): {{ data_JobRole_Manager }}</p>
+      <p>JobRole_Manufacturing_Director (1/0): {{ data_JobRole_Manufacturing_Director }}</p>
+      <p>JobRole_Research_Director (1/0): {{ data_JobRole_Research_Director }}</p>
+      <p>JobRole_Research_Scientist (1/0): {{ data_JobRole_Research_Scientist }}</p>
+      <p>JobRole_Sales_Executive (1/0): {{ data_JobRole_Sales_Executive }}</p>
+      <p>JobRole_Sales_Representative (1/0): {{ data_JobRole_Sales_Representative }}</p>
+
+      <p>MaritalStatus_Married (1/0): {{ data_MaritalStatus_Married }}</p>
+      <p>MaritalStatus_Single (1/0): {{ data_MaritalStatus_Single }}</p>
+
+      <p>OverTime_Yes (1=Yes, 0=No): {{ data_OverTime_Yes }}</p>
+
+
+      <br>
+      {% if out == 1 %}
+        <p>This employee <b>will leave</b>  your company in the future <b></p>
+      {% else %}
+        <p>This employee <b>will not</b> leave your company in the future<b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'eatApp:attrition' %}">Attrition Predicition</a>
+    <br>
+</div>
+{% endblock %}
